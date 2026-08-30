@@ -4,7 +4,6 @@ import { Property, CatalogSnapshot } from './types';
 import { getActiveSnapshot } from './catalogRepository';
 import { getFavorites, toggleFavorite } from './useFavorites';
 import { normalizeSearch } from './utils';
-import { formatCurrency, formatArea, formatPricePerSqm } from './formatters';
 import Header from './components/Header';
 import Intro from './components/Intro';
 import SearchFilters from './components/SearchFilters';
@@ -260,7 +259,6 @@ function App() {
       <Header
         snapshot={snapshot}
         onImportClick={() => setShowImportDialog(true)}
-        propertiesCount={properties.length}
       />
       
       <main style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 1rem' }}>
@@ -323,7 +321,7 @@ function App() {
         <PdfImportDialog
           onClose={() => setShowImportDialog(false)}
           currentProperties={properties}
-          onUpdateSnapshot={(newSnapshot) => {
+          onUpdateSnapshot={(newSnapshot: CatalogSnapshot) => {
             setSnapshot(newSnapshot);
             setProperties(newSnapshot.properties);
             setShowImportDialog(false);

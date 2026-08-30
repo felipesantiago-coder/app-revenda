@@ -1,5 +1,3 @@
-import { Property, CatalogSnapshot } from './types';
-
 const FAVORITES_KEY = 'quadraimob-favorites';
 
 export function getFavorites(): Set<string> {

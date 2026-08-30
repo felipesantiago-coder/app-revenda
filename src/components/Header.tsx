@@ -3,10 +3,9 @@ import { CatalogSnapshot } from '../types';
 interface HeaderProps {
   snapshot: CatalogSnapshot;
   onImportClick: () => void;
-  propertiesCount: number;
 }
 
-export default function Header({ snapshot, onImportClick, propertiesCount }: HeaderProps) {
+export default function Header({ snapshot, onImportClick }: HeaderProps) {
   const displayDate = snapshot.sourceDate 
     ? `Atualizado em ${snapshot.sourceDate}`
     : `Importado em ${new Date(snapshot.importedAt).toLocaleDateString('pt-BR', { day: 'numeric', month: 'short', year: 'numeric' })}`;

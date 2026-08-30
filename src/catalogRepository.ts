@@ -1,4 +1,4 @@
-import { Property, CatalogSnapshot } from './types';
+import type { CatalogSnapshot } from './types';
 
 const DB_NAME = 'QuadraimobCatalogDB';
 const DB_VERSION = 1;
